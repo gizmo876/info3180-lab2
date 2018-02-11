@@ -7,10 +7,12 @@ This file creates your application.
 
 from app import app
 from flask import render_template, request, redirect, url_for, flash
+from datetime import datetime, date
 
+    
 @app.route('/profile')
 def profile():
- return render_template('profile.html')
+    return render_template('profile.html', date_joined = format_date_joined())
 
 @app.route('/')
 def home():
@@ -21,7 +23,7 @@ def home():
 @app.route('/about/')
 def about():
     """Render the website's about page."""
-    return render_template('about.html', name="Mary Jane")
+    return render_template('about.html', name="Shakielle Powell")
 
 
 ###
@@ -34,7 +36,11 @@ def send_text_file(file_name):
     file_dot_text = file_name + '.txt'
     return app.send_static_file(file_dot_text)
 
-
+def format_date_joined():
+    date_joined = date(2018, 2, 7)
+    return date_joined.strftime("%B, %Y")
+    
+    
 @app.after_request
 def add_header(response):
     """
@@ -51,7 +57,8 @@ def add_header(response):
 def page_not_found(error):
     """Custom 404 page."""
     return render_template('404.html'), 404
-
-
+    
 if __name__ == '__main__':
     app.run(debug=True, host="0.0.0.0", port="8080")
+
+

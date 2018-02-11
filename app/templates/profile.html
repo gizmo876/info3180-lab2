@@ -1,20 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
+{% extends "base.html" %}
+
+{% block main %}
+
     <link rel="stylesheet" type="text/css" href="profile.css">
-    </head>
-    
-    <body>
-        
+
+
+    <div class="fullBox">    
     <div class="boxed">
-     </div>
+     
     
-    <img src="https://scontent.fktp1-1.fna.fbcdn.net/v/t1.0-9/25592054_1717154851668498_5779521323796185665_n.jpg?oh=79add504077d05bbedc6d72f3acb0d6e&oe=5ADE620C" alt="Gizmo">
-    
+    <img src="https://scontent.fkin1-1.fna.fbcdn.net/v/t1.0-9/25592054_1717154851668498_5779521323796185665_n.jpg?oh=79add504077d05bbedc6d72f3acb0d6e&oe=5ADE620C" />
     <h1> Shakielle Powell </h1>
-  
-  
-  
-   
+    <p class="mainInfo">@gizmo876 <br> Taylor Hall, UWI Mona <br/>Joined {{ date_joined }}
+    </p>
     
-    </body>
+    <p class=otherInfo>UWI Student with a musical mind and an active imagination. Don't try to replicate what has already been done... What will that accomplish?</p>
+    
+    <div class="separator"> </div>
+    
+    <div class="post">
+    <h2 class="num">243 11.5k 4146</h2>
+    
+    <div class="posts">
+    <h2 class="description">Posts Followers Following</h2>
+    </div>
+    
+    <div class="separator"> </div>
+    
+    <p button class="button"> <br> <br /> <br> <br /> Follow</p>
+    </div>
+   
+    <div class="boxed2">
+    </div>
+    </div>
+    
+    
+{% endblock %}
